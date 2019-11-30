@@ -9,7 +9,7 @@
 ;;; Average BMIfunction that takes two arguments
 ;;;gives bmi category
 
-(define bmi (lambda (x y)(/ y (* x x))))
+(define bmi (lambda (height weight)(/ weight (* height height))))
 
 
 
@@ -17,26 +17,26 @@
 
 (define showResult
 
-(lambda (x y z)
+(lambda (name height weight)
 
-(display x )
+(display name )
 
 (display ": " )
 
-(display y )
+(display height )
 
 (display " meters " )
 
-(display z )
+(display weight )
 
 (display "Kg " )
 
-(if (>= (bmi y z) 30)
+(if (>= (bmi height weight) 30)
 
 (display ". Obese.\n")
-(if (>= (bmi y z) 25)
+(if (>= (bmi height weight) 25)
 (display ". Overweight.\n")
-(if (>= (bmi y z) 18.5)
+(if (>= (bmi height weight) 18.5)
 (display ". Healthy.\n")
 (display ". Underweight.\n")))
 
